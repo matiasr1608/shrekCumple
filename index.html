@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
-    <title>Document</title>
+    <title>Cumple de Mati</title>
+    <link rel="shortcut icon" href="/images/shrek_sinfondo.gif">
 </head>
 <!-- todo= hacer modal, arreglar los botones, poner la imagen arriba. -->
 
@@ -26,20 +27,21 @@
                         </div>
                         <div class="mb-3">
                             <label for="characterName" class="form-label">Nombre del Personaje</label>
-                            <input type="text" class="form-control" id="characterName" name="characterName">
-                            <div class="invalid-feedback" id="invalidFeedback">
+                            <input type="text" class="form-control characterName" id="characterName"
+                                name="characterName">
+                            <div class="invalid-feedback invalidCharacterName" id="invalidFeedback">
                                 Este personaje no existe.
                             </div>
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="userName">
-                            <div class="invalid-feedback" id="invalidFeedbackName">
+                            <input type="text" class="form-control name" id="name" name="userName">
+                            <div class="invalid-feedback invalidName" id="invalidFeedbackName">
                                 Este personaje no existe.
                             </div>
                         </div>
-                        <button type="submit" id="buttonSend" class="btn btn-primary">Enviar!</button>
+                        <button type="submit" id="buttonSend" class="btn btn-primary buttonSend">Enviar!</button>
                     </form>
                 </div>
             </div>
@@ -58,27 +60,28 @@
                         </div>
                         <div class="mb-3">
                             <label for="characterName" class="form-label">Nombre del Personaje</label>
-                            <input type="text" class="form-control" id="characterName" name="characterName">
-                            <div class="invalid-feedback" id="invalidFeedback">
+                            <input type="text" class="form-control characterName" id="characterName"
+                                name="characterName">
+                            <div class="invalid-feedback invalidCharacterName" id="invalidFeedback">
                                 Este personaje no existe.
                             </div>
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="userName">
-                            <div class="invalid-feedback" id="invalidFeedbackName">
+                            <input type="text" class="form-control name" id="name" name="userName">
+                            <div class="invalid-feedback invalidName" id="invalidFeedbackName">
                                 Este personaje no existe.
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="pin" class="form-label">Pin</label>
-                            <input type="number" class="form-control" id="pin" name="pin">
-                            <div class="invalid-feedback" id="invalidFeedbackPin">
+                            <input type="text" class="form-control pin" id="pin" name="pin">
+                            <div class="invalid-feedback invalidPin" id="invalidFeedbackPin">
                                 Este personaje no existe.
                             </div>
                         </div>
-                        <button type="submit" id="buttonSend" class="btn btn-primary">Enviar!</button>
+                        <button type="submit" id="buttonSend" class="btn btn-primary buttonSend">Enviar!</button>
                     </form>
                 </div>
             </div>
@@ -100,17 +103,24 @@
     <div class="container vh-100">
 
         <div style="height: 97%;">
-            <div class="row justify-content-center h-25">
+            <div class="row justify-content-center mb-5">
                 <div class="col">
                     <div>
-                        <p class="text-center">Apretá el primer Shrek para poder comenzar!!!
-                        </p>
-                        <p class="text-center" id="countdown"> Todavía faltan <span id="countdownTime" class="fw-bold"> </span> para que se habilite el registro.</p>
+                        <div class="text-center">
+                            <img class="align-itself-center pt-5" height="150" src="images/Cumple De Mati.png" alt="">
+
+                        </div>
+
+                        <p class="text-center pt-2 fs-5 text">¡¡¡Apretá el primer Shrek para poder comenzar!!!</p>
+                        <p class="text-center visually-hidden" id="countdown"> Todavía faltan <span id="countdownTime"
+                                class="fw-bold"> </span> para que se habilite el registro. Se habilitará el <span
+                                class="dateToOpen"></span></p>
+                        <p class="text-center">El registro se habilitó el <span class="dateToOpen"></span></p>
                         <img src="" alt="" height="100">
                     </div>
                 </div>
             </div>
-            <div id="divMovment" class="row justify-content-center" style="height: 70%;">
+            <div id="divMovment" class="row justify-content-center" style="height: 50%;">
                 <div class="col-8 ">
                     <div id="shrekMov" class="a">
                         <img src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
@@ -119,22 +129,26 @@
             </div>
 
 
-            <div id="buttons" class="row justify-content-center visually-hidden">
+            <div id="buttons" class="row justify-content-center pt-5 visually-hidden ">
                 <div class="col-8 d-grid gap-2 text-center">
-                    <button id="btnGetCharacters" class="btn btn-success btn-sm"> Ver personajes disponbiles</button>
-                    <button id="btnNewCharacter" class="btn btn-success btn-sm disabled" data-bs-toggle="modal" data-bs-target="#getCharacterModal">Obtener un personaje</button>
-                    <button id="btnDelCharacter"class="btn btn-danger btn-sm disabled" data-bs-toggle="modal" data-bs-target="#deleteCharacterModal"> Cambiar mi personaje</button>
+                    <button id="btnGetCharacters" class="btn btn-success btn-sm mb-3"> Ver personajes
+                        disponbiles</button>
+                    <button id="btnNewCharacter" class="btn btn-success btn-sm disabled" data-bs-toggle="modal"
+                        data-bs-target="#getCharacterModal">Obtener un personaje</button>
+                    <button id="btnDelCharacter" class="btn btn-danger btn-sm disabled" data-bs-toggle="modal"
+                        data-bs-target="#deleteCharacterModal"> Cambiar mi personaje</button>
                 </div>
             </div>
-            <div id="rowForList" class="row justify-content-center visually-hidden">
+            <div id="rowForList" class="row justify-content-center visually-hidden mt-5">
                 <div class="col-8 ">
                     <h5 class="text-center"> Personajes Disponibles:</h5>
                     <p>Los nombres sombreados de rojo no están disponibles.</p>
                     <div class="overflow-auto">
-                         <ul id="characterList" class="list-group  list-group-flush text-center" style="max-height: 300px;">
-                    </ul>
+                        <ul id="characterList" class="list-group  list-group-flush text-center"
+                            style="max-height: 300px;">
+                        </ul>
                     </div>
-                   
+
                     <div class="p-2 text-center">
                         <button id="goBack" class="btn btn-success btn-sm">Atrás</button>
                     </div>
@@ -165,7 +179,7 @@
             </div> -->
 
         <footer style="height: 3%;">
-            <p>Version Alpha 0.0.1</p>
+            <p>Version Alpha 0.0.2</p>
 
         </footer>
 
