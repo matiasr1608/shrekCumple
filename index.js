@@ -96,7 +96,7 @@ function success(data) {
     }
     if (data.code == 409) {
         $(".characterName").addClass("is-invalid");
-        $(".invalidCharacterFeedback").html("Este personaje ya ha sido asignado.");
+        $(".invalidCharacterName").html("Este personaje ya ha sido asignado.");
     }
     if (data.code == 201) {
         $("#getCharacterModal").modal("hide");
