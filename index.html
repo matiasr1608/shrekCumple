@@ -14,6 +14,73 @@
 <!-- todo= hacer modal, arreglar los botones, poner la imagen arriba. -->
 
 <body style="background-color:#C4D300 ;">
+
+    <div id="page-container">
+        <div id="content-wrap">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col">
+                        <div>
+                            <div class="text-center">
+                                <a href="/">
+                                    <img class="align-itself-center pt-5" height="150" src="images/Cumple De Mati.png"
+                                    alt="">
+
+                                </a>
+                                
+                            </div>
+
+                            <p class="text-center pt-2 fs-5 text">¡¡¡Apretá el primer Shrek para poder comenzar!!!
+                            </p>
+                            <p class="text-center visually-hidden" id="countdown"> Todavía faltan <span
+                                    id="countdownTime" class="fw-bold"> </span> para que se habilite el registro. Se
+                                habilitará el <span class="dateToOpen"></span></p>
+                            <p class="text-center">El registro se habilitó el <span class="dateToOpen"></span></p>
+                            <img src="" alt="" height="100"  >
+                        </div>
+                    </div>
+                </div>
+                <div id="divMovment" class="row justify-content-center" style="height: 25rem;">
+                    <div class="col-8 ">
+                        <div id="shrekMov" class="a">
+                            <img src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="buttons" class="row justify-content-center pt-5 visually-hidden ">
+                    <div class="col-8 d-grid gap-2 text-center">
+                        <button id="btnGetCharacters" class="btn btn-success btn-sm mb-3"> Ver personajes
+                            disponbiles y obtenerlo</button>
+                        <!-- <button id="btnNewCharacter" class="btn btn-success btn-sm disabled" data-bs-toggle="modal"
+                            data-bs-target="#getCharacterModal">Obtener un personaje</button> -->
+                        <button id="btnDelCharacter" class="btn btn-danger btn-sm disabled" data-bs-toggle="modal"
+                            data-bs-target="#deleteCharacterModal"> Cambiar mi personaje</button>
+                    </div>
+                </div>
+                <div id="rowForList" class="row justify-content-center visually-hidden mt-5">
+                    <div class="col-8 ">
+                        <h5 class="text-center"> Personajes Disponibles:</h5>
+                        <p>Los nombres sombreados de rojo no están disponibles. Apretá un personaje sombreado en
+                            verde para poder obtenerlo.</p>
+                        <div class="overflow-auto">
+                            <ul id="characterList" class="list-group  list-group-flush text-center"
+                                style="max-height: 300px;">
+                            </ul>
+                        </div>
+
+                        <div class="p-2 text-center">
+                            <button id="goBack" class="btn btn-success btn-sm">Atrás</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Version Alpha 0.0.3</p>
+        </footer>
+    </div>
     <div class="modal" id="getCharacterModal" tabindex="-1">
         <div class="modal-dialog modal-sm modal-dialog-centered ">
             <div class="modal-content">
@@ -27,7 +94,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="characterName" class="form-label">Nombre del Personaje</label>
-                            <input type="text" class="form-control characterName" id="characterName"
+                            <input type="text" class="form-control characterName" id="characterName1"
                                 name="characterName">
                             <div class="invalid-feedback invalidCharacterName" id="invalidFeedback">
                                 Este personaje no existe.
@@ -100,90 +167,7 @@
             </div>
         </div>
     </div>
-    <div class="container vh-100">
-
-        <div style="height: 97%;">
-            <div class="row justify-content-center mb-5">
-                <div class="col">
-                    <div>
-                        <div class="text-center">
-                            <img class="align-itself-center pt-5" height="150" src="images/Cumple De Mati.png" alt="">
-
-                        </div>
-
-                        <p class="text-center pt-2 fs-5 text">¡¡¡Apretá el primer Shrek para poder comenzar!!!</p>
-                        <p class="text-center visually-hidden" id="countdown"> Todavía faltan <span id="countdownTime"
-                                class="fw-bold"> </span> para que se habilite el registro. Se habilitará el <span
-                                class="dateToOpen"></span></p>
-                        <p class="text-center">El registro se habilitó el <span class="dateToOpen"></span></p>
-                        <img src="" alt="" height="100">
-                    </div>
-                </div>
-            </div>
-            <div id="divMovment" class="row justify-content-center" style="height: 50%;">
-                <div class="col-8 ">
-                    <div id="shrekMov" class="a">
-                        <img src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="buttons" class="row justify-content-center pt-5 visually-hidden ">
-                <div class="col-8 d-grid gap-2 text-center">
-                    <button id="btnGetCharacters" class="btn btn-success btn-sm mb-3"> Ver personajes
-                        disponbiles</button>
-                    <button id="btnNewCharacter" class="btn btn-success btn-sm disabled" data-bs-toggle="modal"
-                        data-bs-target="#getCharacterModal">Obtener un personaje</button>
-                    <button id="btnDelCharacter" class="btn btn-danger btn-sm disabled" data-bs-toggle="modal"
-                        data-bs-target="#deleteCharacterModal"> Cambiar mi personaje</button>
-                </div>
-            </div>
-            <div id="rowForList" class="row justify-content-center visually-hidden mt-5">
-                <div class="col-8 ">
-                    <h5 class="text-center"> Personajes Disponibles:</h5>
-                    <p>Los nombres sombreados de rojo no están disponibles.</p>
-                    <div class="overflow-auto">
-                        <ul id="characterList" class="list-group  list-group-flush text-center"
-                            style="max-height: 300px;">
-                        </ul>
-                    </div>
-
-                    <div class="p-2 text-center">
-                        <button id="goBack" class="btn btn-success btn-sm">Atrás</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- <div class="row justify-content-center">
-                <div class="col-4 align-self-center">
-                    <form id="hola">
-                        <div style="height: 15%; width: auto;">
-                        </div>
-                        <div class="mb-3">
-                            <label for="characterName" class="form-label">Nombre del Personaaje</label>
-                            <input type="text" class="form-control" id="characterName" name="characterName">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="userName">
-                        </div>
-                        <button type="submit" id="buttonSend" class="btn btn-primary">Enviar!</button>
-                    </form>
-                </div>
     
-            </div> -->
-
-        <footer style="height: 3%;">
-            <p>Version Alpha 0.0.2</p>
-
-        </footer>
-
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
