@@ -24,33 +24,30 @@
                             <div class="text-center">
                                 <a href="/">
                                     <img class="align-itself-center pt-5" height="150" src="images/Cumple De Mati.png"
-                                    alt="">
-
+                                        alt="">
                                 </a>
-                                
                             </div>
-
                             <p class="text-center pt-2 fs-5 text">¡¡¡Apretá el primer Shrek para poder comenzar!!!
                             </p>
                             <p class="text-center visually-hidden" id="countdown"> Todavía faltan <span
                                     id="countdownTime" class="fw-bold"> </span> para que se habilite el registro. Se
                                 habilitará el <span class="dateToOpen"></span></p>
                             <p class="text-center">El registro se habilitó el <span class="dateToOpen"></span></p>
-                            <img src="" alt="" height="100"  >
+                            <img src="" alt="" height="100">
                         </div>
                     </div>
                 </div>
                 <div id="divMovment" class="row justify-content-center" style="height: 25rem;">
                     <div class="col-8 ">
-                        <div id="shrekMov" class="a">
-                            <img src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
+                        <div id="shrekMov" class="a" style="cursor: pointer;">
+                            <img draggable="false" src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
                         </div>
                     </div>
                 </div>
 
 
                 <div id="buttons" class="row justify-content-center pt-5 visually-hidden ">
-                    <div class="col-8 d-grid gap-2 text-center">
+                    <div class="col-8 d-grid gap-2 text-center" style="max-width: 25rem;" >
                         <button id="btnGetCharacters" class="btn btn-success btn-sm mb-3"> Ver personajes
                             disponbiles y obtenerlo</button>
                         <!-- <button id="btnNewCharacter" class="btn btn-success btn-sm disabled" data-bs-toggle="modal"
@@ -78,14 +75,14 @@
             </div>
         </div>
         <footer class="footer">
-            <p>Version Alpha 0.0.3</p>
+            <p>Version Alpha 0.0.4</p>
         </footer>
     </div>
     <div class="modal" id="getCharacterModal" tabindex="-1">
         <div class="modal-dialog modal-sm modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Elegir un personaje:</h5>
+                    <h5 class="modal-title" style="color: wheat;">Elegir un personaje:</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -108,7 +105,10 @@
                                 Este personaje no existe.
                             </div>
                         </div>
-                        <button type="submit" id="buttonSend" class="btn btn-primary buttonSend">Enviar!</button>
+                        <div class="text-center">
+                            <button type="submit" id="buttonSend" class="btn btn-success buttonSend">Enviar!</button>
+
+                        </div>
                     </form>
                 </div>
             </div>
@@ -118,7 +118,7 @@
         <div class="modal-dialog modal-sm modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Borrar un personaje:</h5>
+                    <h5 class="modal-title" style="color: wheat;">Borrar un personaje:</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -148,7 +148,9 @@
                                 Este personaje no existe.
                             </div>
                         </div>
-                        <button type="submit" id="buttonSend" class="btn btn-primary buttonSend">Enviar!</button>
+                        <div class="text-center">
+                            <button type="submit" id="buttonSend" class="btn btn-success buttonSend">Enviar!</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -158,7 +160,7 @@
         <div class="modal-dialog modal-sm modal-dialog-centered ">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">:)</h5>
+                    <h5 class="modal-title" style="color: wheat;">:)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -167,7 +169,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

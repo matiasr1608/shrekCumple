@@ -1,4 +1,4 @@
-const url ="https://script.google.com/macros/s/AKfycbxPlpPIx8TVI8JTMRoH2gILJ1Iw9ues6W79XsLmFAJ28xmMdihS5fZoUtMbxdIS2908/exec"
+const url = "https://script.google.com/macros/s/AKfycbxWX44-XcGqNrfW3-Dgm-QWv76QFRcm2el_3Nokz0nn3oDNyVnU-cdkbkkerIWyCNSN/exec"
 var numberofShrek = 0;
 var dateTo = null;
 var dateNo = '2022-06-12T16:33:01.000Z';
@@ -16,16 +16,7 @@ $(document).ready(function() {
     animateDiv($("#shrekMov"));      //start the animation on the first shrek
 
     var StimerShrek = setInterval(()=>{  // adds a new mini shrek every 3s, only the first one can be clickable
-        if(numberofShrek< 50){
-            numberofShrek = numberofShrek + 2
-        $("#divMovment").append(
-            `<div class="col-8">
-        <div id="shrekMov`+numberofShrek+`" class="a">
-            <img src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
-        </div>
-       </div>`)
-        animateDiv($("#shrekMov"+numberofShrek))
-        }
+       addMiniShrek();
     },3000);
    
     //countdown
@@ -43,8 +34,25 @@ $(document).ready(function() {
             alert("Todavía no se puede ansioseee")
         }
     });
+    $(document).click(()=>{
+        addMiniShrek();
+    })
     
 });
+function addMiniShrek(){
+    if(numberofShrek< 50){
+        numberofShrek = numberofShrek + 2
+    $("#divMovment").append(
+        `<div class="col-8">
+    <div id="shrekMov`+numberofShrek+`" class="a" style="cursor: pointer;">
+        <img draggable="false" src="images/shrek_sinfondo.gif" alt="" width="50" height="50">
+    </div>
+   </div>`)
+    animateDiv($("#shrekMov"+numberofShrek))
+    }
+
+}
+
 function sendingRequest(){       //function to show a loading sign when waiting for the get response
     $(".characterName").removeClass("is-invalid");
     $(".name").removeClass("is-invalid");
@@ -74,9 +82,8 @@ $("#delCharacterForm").submit(function( event ) {       // to delete a character
     const dictionaryData = {};
     const formData= $(this).serializeArray();
     formData.forEach(({name, value}) => dictionaryData[name] = value.toLowerCase());
-    //TODO: matis ajax
     event.preventDefault();
-   dictionaryData.type = "delete"
+    dictionaryData.type = "delete"
     $.ajax({
         type: "POST",
         url: url,

@@ -5,6 +5,9 @@ div.a {
     position: fixed;
 
 }
+.modal-header{
+    background-color: #4F5400;
+}
 
 body {
     height: 100vh;
