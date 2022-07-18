@@ -29,10 +29,10 @@
                             </div>
                             <p class="text-center pt-2 fs-5 text">¡¡¡Apretá el primer Shrek para poder comenzar!!!
                             </p>
-                            <p class="text-center visually-hidden" id="countdown"> Todavía faltan <span
+                            <p class="text-center visually-hidden" id="countdownBefore"> Todavía faltan <span
                                     id="countdownTime" class="fw-bold"> </span> para que se habilite el registro. Se
                                 habilitará el <span class="dateToOpen"></span></p>
-                            <p class="text-center">El registro se habilitó el <span class="dateToOpen"></span></p>
+                            <p class="text-center visually-hidden" id="countdownAfter">El registro se habilitó el <span class="dateToOpen"></span></p>
                             <img src="" alt="" height="100">
                         </div>
                     </div>
@@ -56,8 +56,8 @@
                             data-bs-target="#deleteCharacterModal"> Cambiar mi personaje</button>
                     </div>
                 </div>
-                <div id="rowForList" class="row justify-content-center visually-hidden mt-5">
-                    <div class="col-8 ">
+                <div id="rowForList" class="row justify-content-center visually-hidden mt-5 ">
+                    <div class="col-8 " style="max-width: 25rem;">
                         <h5 class="text-center"> Personajes Disponibles:</h5>
                         <p>Los nombres sombreados de rojo no están disponibles. Apretá un personaje sombreado en
                             verde para poder obtenerlo.</p>

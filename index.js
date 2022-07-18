@@ -186,19 +186,24 @@ function seeIfAvailable(){
 }
 function succesDate(data){
     canSaveCharacter = data.result;
+   
     dateTo =data.date;
     var fecha = new Date(dateTo)
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit", minute:"2-digit"};
     
     $(".dateToOpen").text(fecha.toLocaleDateString("es-US", options))
+    canSaveCharacter = "False";
 
-    if(data.result== "False"){
+    if(canSaveCharacter== "False"){
         startTimer();
-        $("#countdown").removeClass("visually-hidden")
+        $("#countdownBefore").removeClass("visually-hidden")
+        $("#countdownAfter").addClass("visually-hidden")
 
-        //$("#countdown").removeClass("visually-hidden")
+
     }else{
-        $("#countdown").addClass("visually-hidden")
+        $("#countdownBefore").addClass("visually-hidden")
+        $("#countdownAfter").removeClass("visually-hidden")
+
         $("#btnDelCharacter").removeClass("disabled")
         $("#btnNewCharacter").removeClass("disabled")
     }
