@@ -192,7 +192,6 @@ function succesDate(data){
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: "2-digit", minute:"2-digit"};
     
     $(".dateToOpen").text(fecha.toLocaleDateString("es-US", options))
-    canSaveCharacter = "False";
 
     if(canSaveCharacter== "False"){
         startTimer();
